@@ -12,7 +12,7 @@ class EmptyNDArray:
     :param dtype: (:class:`numpy.dtype`) type of the element of the array
     """
 
-    def __init__(self, shape, dtype=numpy.float):
+    def __init__(self, shape, dtype=float):
         self._shape = tuple(int(x) for x in shape)
         self._dtype = numpy.dtype(dtype)
 
@@ -24,7 +24,8 @@ class EmptyNDArray:
     def tofile(self, f):
         """Write the stub to the file, moving the stream position after the data.
 
-        :param f: the file object in which to write the data. The stream position should be set at the correct place."""
+        :param f: the file object in which to write the data. The stream position should be set at the correct place.
+        """
         # We only seek to the end position, this is fast.
         f.seek(self._dtype.itemsize * numpy.prod(self._shape), io.SEEK_CUR)
 
