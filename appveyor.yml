@@ -18,7 +18,7 @@ install:
   - "%PYTHON%\\scripts\\conda.exe install numpy pytest"
   - "%PYTHON%\\scripts\\conda.exe install -c conda-forge pytest-cov"
 
-build: off
+build: false
 
 test_script:
   - "%PYTHON%\\python.exe -m pytest --cov=mmappickle --cov-report=term-missing"
